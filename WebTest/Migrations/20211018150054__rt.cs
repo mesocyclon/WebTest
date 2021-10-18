@@ -12,9 +12,9 @@ namespace WebTest.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Fu = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Iu = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Ou = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecondName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -23,7 +23,7 @@ namespace WebTest.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Fu", "Iu", "Ou" },
+                columns: new[] { "Id", "LastName", "FirstName", "SecondName" },
                 values: new object[] { new Guid("30fb2dd3-ea0e-4f05-b0db-ef6341a593f0"), "В космос ", "text text", "text text text" });
         }
 

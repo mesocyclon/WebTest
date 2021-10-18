@@ -25,13 +25,13 @@ namespace WebTest.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Fu")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Iu")
+                    b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Ou")
+                    b.Property<string>("SecondName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -42,9 +42,9 @@ namespace WebTest.Migrations
                         new
                         {
                             Id = new Guid("30fb2dd3-ea0e-4f05-b0db-ef6341a593f0"),
-                            Fu = "В космос ",
-                            Iu = "text text",
-                            Ou = "text text text"
+                            LastName = "В космос ",
+                            FirstName = "text text",
+                            SecondName = "text text text"
                         });
                 });
 #pragma warning restore 612, 618

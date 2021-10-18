@@ -8,9 +8,9 @@ namespace WebTest.Models
 
         
        
-        public string Fu { get; set; }
-        public string Iu { get; set; }
-        public string Ou { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
 
     }
 }

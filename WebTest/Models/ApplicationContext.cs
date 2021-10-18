@@ -13,9 +13,9 @@ namespace WebTest.Models
             builder.Entity<UsersModel>().HasData(new UsersModel
             {
                 Id = new System.Guid("30FB2DD3-EA0E-4F05-B0DB-EF6341A593F0"),
-                Fu = "В космос ",
-                Iu = "text text",
-                Ou = "text text text"
+                FirstName = "В космос ",
+                LastName = "text text",
+                SecondName = "text text text"
             });
         }
     }

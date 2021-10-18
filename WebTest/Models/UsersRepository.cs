@@ -17,7 +17,7 @@ namespace WebTest.Models
 
         public IQueryable<UsersModel> GetArticles()
         {
-            return context.Users.OrderBy(x => x.Fu);
+            return context.Users.OrderBy(x => x.LastName);
         }
 
         public UsersModel GetArticleById(Guid id)
