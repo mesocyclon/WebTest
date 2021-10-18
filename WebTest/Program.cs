@@ -13,6 +13,7 @@ namespace WebTest
     {
         public static void Main(string[] args)
         {
+            int i = 0;
             CreateHostBuilder(args).Build().Run();
         }
 
