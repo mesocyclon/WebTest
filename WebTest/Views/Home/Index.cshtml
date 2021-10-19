@@ -43,11 +43,11 @@
             background: #fc0; 
         }
         .col6 {
-            width: 20px;
+            width: 10px;
             background: #fff;
         }
         .col7 {
-            width: 20px;
+            width: 10px;
             background: #fff;
         }
     </style>
@@ -56,8 +56,8 @@
     <table class="layout" cellspacing="0">
         <tr>
             <td class="col1">ID</td>
-            <td class="col2">Имя</td>
-            <td class="col3">Фамилия</td>
+            <td class="col2">Фамилия</td>
+            <td class="col3">Имя</td>
             <td class="col4">Отчество</td>
             <td class="col5">Дата рождения</td>
             <td class="col6"></td>
@@ -83,12 +83,12 @@
             @entity.Date1
         </td>
         <td>
-            <a asp-controller="Home" asp-action="UsersEdit" asp-route-id="@entity.Id">редактировать</a>
+            <a asp-controller="Home" asp-action="UsersEdit" asp-route-id="@entity.Id">&#10000;</a>
         </td>
         <td>
             <form method="post" asp-controller="Home" asp-action="UsersDelete">
                 <input type="hidden" value="@entity.Id" name="Id" />
-                <input type="submit" value="удалить" />
+                <input type="submit" value=&#10008; />
             </form>
         </td>
     </tr>
