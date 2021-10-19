@@ -1,113 +1,49 @@
 ﻿@model IQueryable<WebTest.Models.Users>
 @{
-    ViewData["Title"] = "Какая-то фигня";
+    ViewData["Title"] = "Лучший проект!";
 }
 
-<h1>Таблица пользователей</h1>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <style type="text/css">
-        .layout {
-            width: 100%;
-        }
-
-            .layout TD {
-                vertical-align: top;
-                padding: 5px;
-            }
-
-        .col1 {
-            width: 150px; 
-            background: #fc0; 
-        }
-
-        .col2 {
-            width: 100px;
-            background: #afccdb; 
-        }
-
-        .col3 {
-            width: 100px; 
-            background: #fc0; 
-        }
-        .col4 {
-            width: 100px;
-            background: #afccdb;
-        }
-
-        .col5 {
-            width: 100px; 
-            background: #fc0; 
-        }
-        .col6 {
-            width: 10px;
-            background: #fff;
-        }
-        .col7 {
-            width: 10px;
-            background: #fff;
-        }
-        .col8 {
-            width: 10px;
-            background: #fff;
-        }
-    </style>
-</head>
-<body>
-    <table class="layout" cellspacing="0">
-        <tr>
-            <td class="col1">ID</td>
-            <td class="col2">Фамилия</td>
-            <td class="col3">Имя</td>
-            <td class="col4">Отчество</td>
-            <td class="col5">Дата рождения</td>
-            <td class="col6"></td>
-            <td class="col7"></td>
-            <td class="col8"></td>
-        </tr>
-
-        @foreach (Users entity in Model)
-        {
-    <tr>
-        <td>
-            @entity.Id
-        </td>
-        <td>
-            @entity.FirstName
-        </td>
-        <td>
-            @entity.LastName
-        </td>
-        <td>
-            @entity.SecondName
-        </td>
-        <td>
-            @entity.Date1
-        </td>
-        <td>
-            <a asp-controller="Home" asp-action="UsersEdit" asp-route-id="@entity.Id">&#10000;</a>
-        </td>
-        <td>
-            <form method="post" asp-controller="Home" asp-action="UsersDelete">
-                <input type="hidden" value="@entity.Id" name="Id" />
-                <input type="submit" value=&#10008; />
-            </form>
-        </td>
-        <td>
-            <a asp-controller="Home" asp-action="PhoneEdit" asp-route-id="@entity.Id">&#9742;</a>
-        </td>
-    </tr>
-                }
-        </table>
-</body>
-</html>
-
-
-
-<div class="text-center">
-    <a asp-controller="Home" asp-action="UsersEdit">Новый пользователь</a>
+<div class="">
+    <a  class="btn btn-primary m-2" role="button" asp-controller="Home" asp-action="UsersEdit">Добавить</a>
 </div>
 
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Имя</th> 
+            <th scope="col">Отчество</th>
+            <th scope="col">Дата рождения</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Users entity in Model)
+        {
+            <tr>
+                <th scope="row">
+                    @entity.Id
+                </th>
+                <td>@entity.FirstName</td>
+                <td>@entity.LastName</td>
+                <td>@entity.SecondName</td>
+                <td>@entity.Date1</td>
+                <td>
+                    <a asp-controller="Home" asp-action="UsersEdit" asp-route-id="@entity.Id">&#10000;</a>
+                </td>
+                <td>
+                    <form method="post" asp-controller="Home" asp-action="UsersDelete">
+                        <input type="hidden" value="@entity.Id" name="Id" />
+                        <input type="submit" value=&#10008; />
+                    </form>
+                </td>
+                <td>
+                    <a asp-controller="Home" asp-action="PhoneEdit" asp-route-id="@entity.Id">&#9742;</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -64,7 +64,7 @@ namespace WebTest.Controllers
         public IActionResult PhoneEdit(Guid id)
         {
             Phone model = id == default ? new Phone() : usersRepository.GetPhoneById(id);
-            return View(model);
+            return View("~/Views/Phone/PhoneEdit.cshtml");
         }
         [HttpPost]
         public IActionResult PhoneEdit(Phone model)
@@ -75,7 +75,7 @@ namespace WebTest.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(model);
+            return View("~/Views/Phone/PhoneEdit.cshtml");
         }
         [HttpPost]
         public IActionResult PhoneDelete(Guid id)
