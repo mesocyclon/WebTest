@@ -15,17 +15,17 @@ namespace WebTest.Models
             this.context = context;
         }
 
-        public IQueryable<UsersModel> GetUsers()
+        public IQueryable<Users> GetUsers()
         {
-            return context.Users.OrderBy(x => x.LastName);
+            return context.users.OrderBy(x => x.LastName);
         }
 
-        public UsersModel GetUserById(Guid id)
+        public Users GetUserById(Guid id)
         {
-            return context.Users.Single(x => x.Id == id);
+            return context.users.Single(x => x.Id == id);
         }
 
-        public Guid SaveUser(UsersModel entity)
+        public Guid SaveUser(Users entity)
         {
             if (entity.Id == default)
                 context.Entry(entity).State = EntityState.Added;
@@ -36,9 +36,9 @@ namespace WebTest.Models
             return entity.Id;
         }
 
-        public void DeleteUser(UsersModel entity)
+        public void DeleteUser(Users entity)
         {
-            context.Users.Remove(entity);
+            context.users.Remove(entity);
             context.SaveChanges();
         }
     }

@@ -33,11 +33,11 @@ namespace WebTest.Controllers
 
         public IActionResult UsersEdit(Guid id)
         {
-            UsersModel model = id == default ? new UsersModel() : usersRepository.GetUserById(id);
+            Users model = id == default ? new Users() : usersRepository.GetUserById(id);
             return View(model);
         }
         [HttpPost]
-        public IActionResult UsersEdit(UsersModel model)
+        public IActionResult UsersEdit(Users model)
         {
             if (ModelState.IsValid)
             {
@@ -50,7 +50,7 @@ namespace WebTest.Controllers
         [HttpPost]
         public IActionResult UsersDelete(Guid id)
         {
-            usersRepository.DeleteUser(new UsersModel { Id = id });
+            usersRepository.DeleteUser(new Users { Id = id });
             return RedirectToAction("Index");
         }
 

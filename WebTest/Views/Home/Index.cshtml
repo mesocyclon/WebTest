@@ -1,4 +1,4 @@
-﻿@model IQueryable<WebTest.Models.UsersModel>
+﻿@model IQueryable<WebTest.Models.Users>
 @{
     ViewData["Title"] = "Какая-то фигня";
 }
@@ -64,7 +64,7 @@
             <td class="col7"></td>
         </tr>
 
-        @foreach (UsersModel entity in Model)
+        @foreach (Users entity in Model)
         {
     <tr>
         <td>
