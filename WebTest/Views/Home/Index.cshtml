@@ -1,24 +1,105 @@
 ﻿@model IQueryable<WebTest.Models.UsersModel>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Какая-то фигня";
 }
+
+<h1>Таблица пользователей</h1>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <style type="text/css">
+        .layout {
+            width: 100%;
+        }
+
+            .layout TD {
+                vertical-align: top;
+                padding: 5px;
+            }
+
+        .col1 {
+            width: 150px; 
+            background: #fc0; 
+        }
+
+        .col2 {
+            width: 100px;
+            background: #afccdb; 
+        }
+
+        .col3 {
+            width: 100px; 
+            background: #fc0; 
+        }
+        .col4 {
+            width: 100px;
+            background: #afccdb;
+        }
+
+        .col5 {
+            width: 100px; 
+            background: #fc0; 
+        }
+        .col6 {
+            width: 20px;
+            background: #fff;
+        }
+        .col7 {
+            width: 20px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <table class="layout" cellspacing="0">
+        <tr>
+            <td class="col1">ID</td>
+            <td class="col2">Имя</td>
+            <td class="col3">Фамилия</td>
+            <td class="col4">Отчество</td>
+            <td class="col5">Дата рождения</td>
+            <td class="col6"></td>
+            <td class="col7"></td>
+        </tr>
+
+        @foreach (UsersModel entity in Model)
+        {
+    <tr>
+        <td>
+            @entity.Id
+        </td>
+        <td>
+            @entity.FirstName
+        </td>
+        <td>
+            @entity.LastName
+        </td>
+        <td>
+            @entity.SecondName
+        </td>
+        <td>
+            @entity.Date1
+        </td>
+        <td>
+            <a asp-controller="Home" asp-action="UsersEdit" asp-route-id="@entity.Id">редактировать</a>
+        </td>
+        <td>
+            <form method="post" asp-controller="Home" asp-action="UsersDelete">
+                <input type="hidden" value="@entity.Id" name="Id" />
+                <input type="submit" value="удалить" />
+            </form>
+        </td>
+    </tr>
+                }
+        </table>
+</body>
+</html>
+
+
 
 <div class="text-center">
     <a asp-controller="Home" asp-action="UsersEdit">Новый пользователь</a>
 </div>
 
-<div class="text-center">
-    @foreach (UsersModel entity in Model)
-    {
-        <div>
-            @entity.FirstName
-            |
-            <a asp-controller="Home" asp-action="UsersEdit" asp-route-id="@entity.Id">редактировать</a>
-            |
-            <form method="post" asp-controller="Home" asp-action="UsersDelete">
-                <input type="hidden" value="@entity.Id" name="Id"/>
-                <input type="submit" value="удалить" />
-            </form>
-        </div>
-    }
-</div>
