@@ -12,5 +12,9 @@ namespace WebTest.Models
         public string FirstName { get; set; }
         public string SecondName { get; set; }
 
+       // public string Second2Name { get; set; }
+
+        public DateTime Date1 { get; set; }
+
     }
 }
