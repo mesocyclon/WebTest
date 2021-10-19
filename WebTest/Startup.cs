@@ -37,7 +37,7 @@ namespace WebTest
             });
 
             services.AddDbContext<ApplicationContext>(x => x.UseSqlServer(
-                "Data Source=(local); Database=ArticlesSite; Persist Security Info=false; MultipleActiveResultSets=True; Trusted_Connection=True;"
+                "Data Source=(local); Database=UsersSite; Persist Security Info=false; MultipleActiveResultSets=True; Trusted_Connection=True;"
             ));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
