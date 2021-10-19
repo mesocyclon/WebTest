@@ -6,6 +6,9 @@ namespace WebTest.Models
     {
         public ApplicationContext(DbContextOptions options) : base(options) { }
         public DbSet<Users> users { get; set; }
+        public DbSet<Phone> phone { get; set; }
+
+        public DbSet<PhoneLink> phonelink { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebTest.Models
 {
@@ -16,6 +19,24 @@ namespace WebTest.Models
     {
         public Guid Id { get; set; }
         public string PhoneNumber { get; set; }
+
+    }
+
+    public class PhoneLink
+    {
+        public Guid Id { get; set; }
+
+      //  [Key]
+      //  [ForeignKey("Phone")]
+       // public Guid IDPhone { get; set; }
+
+        public virtual ICollection<Phone> IDPhone { get; set; }
+        //   [Key]
+        //   [ForeignKey("Users")]
+
+        //  public Guid IDUsers { get; set; }
+
+        public virtual ICollection<Users> IDUsers { get; set; }
 
     }
 }

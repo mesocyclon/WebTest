@@ -19,10 +19,11 @@ namespace WebTest.Controllers
       //  }
 
         private readonly UsersRepository usersRepository;
+       
 
-        public HomeController(UsersRepository articlesRepository)
+        public HomeController(UsersRepository usersRepository)
         {
-            this.usersRepository = articlesRepository;
+            this.usersRepository = usersRepository;
         }
 
         public IActionResult Index()
@@ -51,6 +52,35 @@ namespace WebTest.Controllers
         public IActionResult UsersDelete(Guid id)
         {
             usersRepository.DeleteUser(new Users { Id = id });
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// //////////
+        /// </summary>
+        /// <returns></returns>
+        
+
+        public IActionResult PhoneEdit(Guid id)
+        {
+            Phone model = id == default ? new Phone() : usersRepository.GetPhoneById(id);
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult PhoneEdit(Phone model)
+        {
+            if (ModelState.IsValid)
+            {
+                usersRepository.SavePhone(model);
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult PhoneDelete(Guid id)
+        {
+            usersRepository.DeletePhone(new Phone { Id = id });
             return RedirectToAction("Index");
         }
 

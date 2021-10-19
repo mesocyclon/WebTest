@@ -28,6 +28,7 @@ namespace WebTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<UsersRepository>();
+           
 
             services.Configure<CookiePolicyOptions>(options =>
             {
