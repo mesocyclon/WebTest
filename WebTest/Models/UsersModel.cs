@@ -12,16 +12,13 @@ namespace WebTest.Models
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public DateTime Date1 { get; set; }
-        public virtual ICollection<Phone> IDPhone { get; set; }
-
+        public virtual ICollection<Phone> Phone { get; set; }
     }
 
     public class Phone
     {
         public Guid Id { get; set; }
         public string PhoneNumber { get; set; }
-        public virtual ICollection<Users> IDUsers { get; set; }
-
+        public virtual ICollection<Users> Users { get; set; }
     }
-     
 }
