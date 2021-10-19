@@ -25,10 +25,10 @@ namespace WebTest.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecondName")
@@ -42,8 +42,8 @@ namespace WebTest.Migrations
                         new
                         {
                             Id = new Guid("30fb2dd3-ea0e-4f05-b0db-ef6341a593f0"),
-                            LastName = "В космос ",
-                            FirstName = "text text",
+                            FirstName = "В космос ",
+                            LastName = "text text",
                             SecondName = "text text text"
                         });
                 });

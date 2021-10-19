@@ -10,8 +10,8 @@ using WebTest.Models;
 namespace WebTest.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20211018150054__rt")]
-    partial class _rt
+    [Migration("20211019053352_hthhdd")]
+    partial class hthhdd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,13 +27,13 @@ namespace WebTest.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Fu")
+                    b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Iu")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Ou")
+                    b.Property<string>("SecondName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -44,9 +44,9 @@ namespace WebTest.Migrations
                         new
                         {
                             Id = new Guid("30fb2dd3-ea0e-4f05-b0db-ef6341a593f0"),
-                            Fu = "В космос ",
-                            Iu = "text text",
-                            Ou = "text text text"
+                            FirstName = "В космос ",
+                            LastName = "text text",
+                            SecondName = "text text text"
                         });
                 });
 #pragma warning restore 612, 618

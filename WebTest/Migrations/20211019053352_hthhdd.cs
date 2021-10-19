@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebTest.Migrations
 {
-    public partial class _rt : Migration
+    public partial class hthhdd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,7 +23,7 @@ namespace WebTest.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "LastName", "FirstName", "SecondName" },
+                columns: new[] { "Id", "FirstName", "LastName", "SecondName" },
                 values: new object[] { new Guid("30fb2dd3-ea0e-4f05-b0db-ef6341a593f0"), "В космос ", "text text", "text text text" });
         }
 
