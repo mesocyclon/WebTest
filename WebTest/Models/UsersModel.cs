@@ -12,6 +12,7 @@ namespace WebTest.Models
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public DateTime Date1 { get; set; }
+        public virtual ICollection<Phone> IDPhone { get; set; }
 
     }
 
@@ -19,24 +20,8 @@ namespace WebTest.Models
     {
         public Guid Id { get; set; }
         public string PhoneNumber { get; set; }
-
-    }
-
-    public class PhoneLink
-    {
-        public Guid Id { get; set; }
-
-      //  [Key]
-      //  [ForeignKey("Phone")]
-       // public Guid IDPhone { get; set; }
-
-        public virtual ICollection<Phone> IDPhone { get; set; }
-        //   [Key]
-        //   [ForeignKey("Users")]
-
-        //  public Guid IDUsers { get; set; }
-
         public virtual ICollection<Users> IDUsers { get; set; }
 
     }
+     
 }
